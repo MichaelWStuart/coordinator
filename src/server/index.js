@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import passport from 'passport';
 import LocalStrategy from 'passport-local';
 import session from 'express-session';
+import fetch from 'isomorphic-fetch';
 
 import { APP_NAME, STATIC_PATH, WEB_PORT } from '../shared/config';
 import { isProd } from '../shared/util';
@@ -36,6 +37,18 @@ app.use(STATIC_PATH, express.static('dist'));
 app.use(STATIC_PATH, express.static('public'));
 app.use('/users', usersRoutes);
 app.use('/auth', authRoutes);
+
+app.post('/search', (req, res) => {
+  fetch('https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      Authorization: `Bearer ${process.env.YELP_TOKEN}`,
+    },
+  })
+  .then(json => json.json())
+  .then(response => res.send(response));
+});
 
 app.get('*', (req, res) => {
   res.send(renderApp(req.user));

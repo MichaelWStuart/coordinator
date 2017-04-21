@@ -1,15 +1,14 @@
-import { APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT } from '../shared/config';
+import { APP_NAME, APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT } from '../shared/config';
 import { isProd } from '../shared/util';
 
-const renderApp = (title, user = { username: '', _id: '' }, polls = []) =>
+const renderApp = (user = { username: '', _id: '' }) =>
   `<!doctype html>
   <html>
     <head>
-      <title>${title}</title>
+      <title>${APP_NAME}</title>
       <link rel="stylesheet" href="${STATIC_PATH}/css/style.css">
       <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
       <script>
-        window.polls = JSON.parse('${JSON.stringify(polls)}');
         window.user = JSON.parse('${JSON.stringify(user)}');
       </script>
     </head>

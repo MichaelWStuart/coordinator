@@ -6,11 +6,11 @@ import asyncLogout from '../actions/async-creators/user/logout';
 const Nav = props =>
   <nav id="head-box">
     {props.pathname !== '/polls' &&
-      <NavLink id="polls-link" to={'/polls'}>Polls</NavLink>}
+      <NavLink id="home-link" to={'/home'}>Home</NavLink>}
     {props.user ? (
       <div className="head-link-box">
         <p id="head-current-user">Logged in as {props.user}</p>
-        <NavLink className="head-link" onClick={props.handleClick} to={'/polls'}>Logout</NavLink>
+        <NavLink className="head-link" onClick={props.handleClick} to={'/home'}>Logout</NavLink>
       </div>
     ) : (
       <div className="head-link-box">

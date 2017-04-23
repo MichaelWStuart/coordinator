@@ -1,7 +1,7 @@
 import { APP_NAME, APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT } from '../shared/config';
 import { isProd } from '../shared/util';
 
-const renderApp = (user = { username: '', _id: '' }) =>
+const renderApp = (user = { username: '', _id: '' }, venues = []) =>
   `<!doctype html>
   <html>
     <head>
@@ -10,6 +10,7 @@ const renderApp = (user = { username: '', _id: '' }) =>
       <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
       <script>
         window.user = JSON.parse('${JSON.stringify(user)}');
+        window.venues = JSON.parse('${JSON.stringify(venues)}');
       </script>
     </head>
     <body>

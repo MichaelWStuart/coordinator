@@ -19,7 +19,7 @@ const middleware = [thunkMiddleware];
 if (!isProd) middleware.push(logger);
 
 // eslint-disable-next-line
-const store = createStore(rootReducer, { user }, composeEnhancers(applyMiddleware(...middleware)));
+const store = createStore(rootReducer, { user, venues }, composeEnhancers(applyMiddleware(...middleware)));
 
 const rootEl = document.querySelector(APP_CONTAINER_SELECTOR);
 

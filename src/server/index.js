@@ -11,6 +11,7 @@ import { APP_NAME, STATIC_PATH, WEB_PORT } from '../shared/config';
 import { isProd } from '../shared/util';
 import renderApp from './render-app';
 import User from './models/user';
+import Venue from './models/venue';
 import usersRoutes from './routes/users';
 import authRoutes from './routes/auth';
 
@@ -38,8 +39,8 @@ app.use(STATIC_PATH, express.static('public'));
 app.use('/users', usersRoutes);
 app.use('/auth', authRoutes);
 
-app.post('/search', (req, res) => {
-  fetch('https://api.yelp.com/v3/autocomplete?text=del&latitude=37.786882&longitude=-122.399972', {
+app.post('/search/:location', (req, res) => {
+  fetch(`https://api.yelp.com/v3/businesses/search?term=bar&location=${req.params.location}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
@@ -51,7 +52,9 @@ app.post('/search', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-  res.send(renderApp(req.user));
+  Venue.find({}, (err, venues) => {
+    res.send(renderApp(req.user, venues));
+  });
 });
 
 app.listen(WEB_PORT, () => {

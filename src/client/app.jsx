@@ -6,7 +6,7 @@ import Nav from './components/nav';
 import Login from './components/login';
 import Register from './components/register';
 import NotFound from './components/not-found';
-import Home from './components/home';
+import Search from './components/search';
 
 class App extends React.Component {
   componentWillReceiveProps(nextProps) {
@@ -23,8 +23,8 @@ class App extends React.Component {
         <Switch>
           <Route path={'/auth/login'} component={Login} />
           <Route path={'/users/register'} component={Register} />
-          <Route path={'/home'} component={Home} />
-          <Redirect from={'/'} to={'/home'} />
+          <Route path={'/search'} component={Search} />
+          <Redirect from={'/'} to={'/search'} />
           <Route component={NotFound} />
         </Switch>
       </div>

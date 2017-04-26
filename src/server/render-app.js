@@ -1,7 +1,7 @@
 import { APP_NAME, APP_CONTAINER_CLASS, STATIC_PATH, WDS_PORT } from '../shared/config';
 import { isProd } from '../shared/util';
 
-const renderApp = (user = { username: '', _id: '' }, venues = []) =>
+const renderApp = (user = { profileId: '', _id: '' }, venues = []) =>
   `<!doctype html>
   <html>
     <head>

@@ -4,7 +4,7 @@ import error from '../sync-creators/error';
 
 export default location =>
   dispatch =>
-    fetch(`/search/${location}`, {
+    fetch(`/venues/search/${location}`, {
       method: 'POST',
     })
     .then(res => res.json())
@@ -12,6 +12,7 @@ export default location =>
       if (response.error) {
         dispatch(error(response.error.description));
       } else {
+        dispatch(error(''));
         dispatch(search(response));
       }
     });

@@ -1144,6 +1144,13 @@ convert-source-map@^1.1.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/convert-source-map/-/convert-source-map-1.5.0.tgz#9acd70851c6d5dfdd93d9282e5edf94a03ff46b5"
 
+cookie-parser@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/cookie-parser/-/cookie-parser-1.4.3.tgz#0fe31fa19d000b95f4aadf1f53fdc2b8a203baa5"
+  dependencies:
+    cookie "0.3.1"
+    cookie-signature "1.0.6"
+
 cookie-signature@1.0.6:
   version "1.0.6"
   resolved "https://registry.yarnpkg.com/cookie-signature/-/cookie-signature-1.0.6.tgz#e303a882b342cc3ee8ca513a79999734dab3ae2c"
@@ -1978,10 +1985,6 @@ generate-object-property@^1.1.0:
   dependencies:
     is-property "^1.0.0"
 
-generaterr@^1.2.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/generaterr/-/generaterr-1.5.0.tgz#b0ceb6cc5164df2a061338cc340a8615395c52fc"
-
 get-caller-file@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
@@ -2110,16 +2113,6 @@ hawk@~3.1.3:
     cryptiles "2.x.x"
     hoek "2.x.x"
     sntp "1.x.x"
-
-history@^4.5.1, history@^4.6.0:
-  version "4.6.1"
-  resolved "https://registry.yarnpkg.com/history/-/history-4.6.1.tgz#911cf8eb65728555a94f2b12780a0c531a14d2fd"
-  dependencies:
-    invariant "^2.2.1"
-    loose-envify "^1.2.0"
-    resolve-pathname "^2.0.0"
-    value-equal "^0.2.0"
-    warning "^3.0.0"
 
 hmac-drbg@^1.0.0:
   version "1.0.0"
@@ -2454,10 +2447,6 @@ is-utf8@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/is-utf8/-/is-utf8-0.2.1.tgz#4b0da1442104d1b336340e80797e865cf39f7d72"
 
-isarray@0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/isarray/-/isarray-0.0.1.tgz#8a18acfca9a8f4177e09abfc6038939b05d1eedf"
-
 isarray@1.0.0, isarray@^1.0.0, isarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
@@ -2695,7 +2684,7 @@ longest@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/longest/-/longest-1.0.1.tgz#30a0b2da38f73770e8294a0d22e6625ed77d0097"
 
-loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1:
+loose-envify@^1.0.0, loose-envify@^1.1.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.3.1.tgz#d1a8ad33fa9ce0e713d65fdd0ac8b748d478c848"
   dependencies:
@@ -2993,6 +2982,10 @@ oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
+oauth@0.9.x:
+  version "0.9.15"
+  resolved "https://registry.yarnpkg.com/oauth/-/oauth-0.9.15.tgz#bd1fefaf686c96b75475aed5196412ff60cfb9c1"
+
 object-assign@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-3.0.0.tgz#9bedd5ca0897949bca47e7ff408062d549f587f2"
@@ -3147,20 +3140,20 @@ parseurl@~1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.1.tgz#c8ab8c9223ba34888aa64a297b28853bec18da56"
 
-passport-local-mongoose@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/passport-local-mongoose/-/passport-local-mongoose-4.0.0.tgz#10fee927eaf9785bb2e10e2a8c446a0ff1fa0107"
+passport-facebook@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/passport-facebook/-/passport-facebook-2.1.1.tgz#c39d0b52ae4d59163245a4e21a7b9b6321303311"
   dependencies:
-    generaterr "^1.2.0"
-    passport-local "^1.0.0"
-    scmp "^1.0.0"
-    semver "^5.1.0"
+    passport-oauth2 "1.x.x"
 
-passport-local@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/passport-local/-/passport-local-1.0.0.tgz#1fe63268c92e75606626437e3b906662c15ba6ee"
+passport-oauth2@1.x.x:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/passport-oauth2/-/passport-oauth2-1.4.0.tgz#f62f81583cbe12609be7ce6f160b9395a27b86ad"
   dependencies:
+    oauth "0.9.x"
     passport-strategy "1.x.x"
+    uid2 "0.0.x"
+    utils-merge "1.x.x"
 
 passport-strategy@1.x.x:
   version "1.0.0"
@@ -3198,12 +3191,6 @@ path-parse@^1.0.5:
 path-to-regexp@0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
-
-path-to-regexp@^1.5.3:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-1.7.0.tgz#59fde0f435badacba103a84e9d3bc64e96b9937d"
-  dependencies:
-    isarray "0.0.1"
 
 path-type@^1.0.0:
   version "1.1.0"
@@ -3434,23 +3421,6 @@ react-redux@^5.0.3:
     lodash "^4.2.0"
     lodash-es "^4.2.0"
     loose-envify "^1.1.0"
-
-react-router-dom@next:
-  version "4.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.0.0-beta.8.tgz#907a5a0a36e9190652c80f2feead0eadbbba262e"
-  dependencies:
-    history "^4.5.1"
-    react-router "^4.0.0-beta.8"
-
-react-router@^4.0.0-beta.8:
-  version "4.0.0-beta.8"
-  resolved "https://registry.yarnpkg.com/react-router/-/react-router-4.0.0-beta.8.tgz#368cfe540d23d5d23419b42fb915d465f268b66b"
-  dependencies:
-    history "^4.6.0"
-    invariant "^2.2.2"
-    loose-envify "^1.3.1"
-    path-to-regexp "^1.5.3"
-    warning "^3.0.0"
 
 react@^15.4.2:
   version "15.4.2"
@@ -3703,10 +3673,6 @@ resolve-from@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-2.0.0.tgz#9480ab20e94ffa1d9e80a804c7ea147611966b57"
 
-resolve-pathname@^2.0.0:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/resolve-pathname/-/resolve-pathname-2.0.2.tgz#e55c016eb2e9df1de98e85002282bfb38c630436"
-
 resolve@^1.1.6:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.3.2.tgz#1f0442c9e0cbb8136e87b9305f932f46c7f28235"
@@ -3749,10 +3715,6 @@ rx-lite@^3.1.2:
 safe-buffer@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.0.1.tgz#d263ca54696cd8a306b5ca6551e92de57918fbe7"
-
-scmp@^1.0.0:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/scmp/-/scmp-1.0.2.tgz#bc4e4e2713252b04210cdff9cef3ade2c8fa7370"
 
 select-hose@^2.0.0:
   version "2.0.0"
@@ -4206,6 +4168,10 @@ uid-safe@~2.1.4:
   dependencies:
     random-bytes "~1.0.0"
 
+uid2@0.0.x:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/uid2/-/uid2-0.0.3.tgz#483126e11774df2f71b8b639dcd799c376162b82"
+
 undefsafe@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/undefsafe/-/undefsafe-0.0.3.tgz#ecca3a03e56b9af17385baac812ac83b994a962f"
@@ -4267,7 +4233,7 @@ util@0.10.3, util@^0.10.3:
   dependencies:
     inherits "2.0.1"
 
-utils-merge@1.0.0:
+utils-merge@1.0.0, utils-merge@1.x.x:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.0.tgz#0294fb922bb9375153541c4f7096231f287c8af8"
 
@@ -4292,10 +4258,6 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-value-equal@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/value-equal/-/value-equal-0.2.0.tgz#4f41c60a3fc011139a2ec3d3340a8998ae8b69c0"
-
 vary@~1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.1.tgz#67535ebb694c1d52257457984665323f587e8d37"
@@ -4311,12 +4273,6 @@ vm-browserify@0.0.4:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-0.0.4.tgz#5d7ea45bbef9e4a6ff65f95438e0a87c357d5a73"
   dependencies:
     indexof "0.0.1"
-
-warning@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
-  dependencies:
-    loose-envify "^1.0.0"
 
 watchpack@^1.3.1:
   version "1.3.1"

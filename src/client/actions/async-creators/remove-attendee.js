@@ -1,11 +1,11 @@
 import fetch from 'isomorphic-fetch';
-import login from '../../sync-creators/user/login';
-import error from '../../sync-creators/error';
+import removeUser from '../sync-creators/attendees/remove-user';
+import removeVenue from '../sync-creators/attendees/remove-venue';
 
 export default data =>
   dispatch =>
-    fetch('/auth/login', {
-      method: 'POST',
+    fetch('/venues/remove-attendee', {
+      method: 'DELETE',
       body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json; charset=utf-8',
@@ -14,10 +14,9 @@ export default data =>
     })
     .then(res => res.json())
     .then((response) => {
-      if (response.success) {
-        dispatch(login(response.credentials));
-        dispatch(error(''));
+      if (response.type === 'remove venue') {
+        dispatch(removeVenue(response));
       } else {
-        dispatch(error(response.message));
+        dispatch(removeUser(response));
       }
     });

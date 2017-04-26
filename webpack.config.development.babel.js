@@ -6,7 +6,7 @@ import { WDS_PORT } from './src/shared/config';
 export default {
   entry: [
     'react-hot-loader/patch',
-    './src/client',
+    './src/client/components',
   ],
   output: {
     filename: 'js/bundle.js',

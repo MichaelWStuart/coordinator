@@ -21,7 +21,7 @@ class Stars extends React.Component {
         {this.stars()}
         {!nonFloat &&
           <svg className="star-halfer" height="25" width="11.5" style={{ right: '13px' }}>
-            <rect x="0" y="0" width="11.5" height="25" fill="#272727" />
+            <rect x="0" y="0" width="11.5" height="25" fill="#252525" />
           </svg>
         }
       </div>

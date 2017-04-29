@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+
+import addAttendee from '../actions/async-creators/add-attendee';
 import removeAttendee from '../actions/async-creators/remove-attendee';
 
 class AttendButton extends React.Component {
@@ -10,9 +12,13 @@ class AttendButton extends React.Component {
   }
 
   handleAttendClick() {
-    document.cookie = `currentVenue=${this.props.venueId}`;
-    window.localStorage.setItem('_search_results', JSON.stringify(this.props.searchResults));
-    window.location = '/auth/facebook';
+    if (this.props.userId) {
+      this.props.attendVenue(this.props.userId, this.props.venueId);
+    } else {
+      document.cookie = `currentVenue=${this.props.venueId}`;
+      window.localStorage.setItem('_search_results', JSON.stringify(this.props.searchResults));
+      window.location = '/auth/facebook';
+    }
   }
 
   render() {
@@ -29,20 +35,22 @@ class AttendButton extends React.Component {
 }
 
 AttendButton.propTypes = {
-  userId: PropTypes.string.isRequired,
-  handleCancelClick: PropTypes.func.isRequired,
-  attendees: PropTypes.array.isRequired,
-  venueId: PropTypes.string.isRequired,
-  hoverText: PropTypes.string.isRequired,
   searchResults: PropTypes.object.isRequired,
+  userId: PropTypes.string.isRequired,
+  attendVenue: PropTypes.func.isRequired,
+  attendees: PropTypes.array.isRequired,
+  handleCancelClick: PropTypes.func.isRequired,
+  hoverText: PropTypes.string.isRequired,
+  venueId: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
-  userId: state.user.profileId,
   searchResults: state.search,
+  userId: state.user.profileId,
 });
 
 const mapDispatchToProps = dispatch => ({
+  attendVenue: (userId, yelpId) => dispatch(addAttendee({ userId, yelpId })),
   handleCancelClick: (userId, yelpId) => dispatch(removeAttendee({ userId, yelpId })),
 });
 

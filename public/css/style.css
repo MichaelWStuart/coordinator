@@ -1,73 +1,146 @@
 body {
-  margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  background: #222;
   color: #DDD;
-  background: #333;
-  margin: auto;
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
   text-align: center;
 }
 
 .flash-error-box {
-  background: rgb(225, 190, 190);
-  color: rgb(150, 50, 50);
-  height: 30px;
-  width: 100%;
-  line-height: 30px;
+  background: rgb(220, 40, 40);
+  border-bottom: 1px solid #555;
+  border-top: 1px solid #555;
+  color: #FFF;
   font-size: 20px;
-  border-top: 1px solid rgb(200, 150, 150);
-  border-bottom: 1px solid rgb(200, 150, 150);
+  height: 30px;
+  line-height: 30px;
+  opacity: .5;
   position: absolute;
-  padding: 0;
-  top: -20px;
+  top: 0;
+  width: 100%;
 }
 
-#logout-button {
-  display: block;
-  position: relative;
-  top: -50px;
-  margin-right: 10px;
-  float: right;
-  background: #333;
-  color: #DDD;
-  border: none;
-  font-size: 15px;
+.delete-button {
+  right: 3.5px;
+  border: 1px solid;
+  background: linear-gradient( 170deg, #AAA, #777 );
+  border-color: #333;
+  border-bottom-color: #111;
+  border-right-color: #111;
+  border-radius: 50%;
+  color: #111;
   cursor: pointer;
+  font-weight: bold;
+  height: 25px;
+  opacity: .75;
+  position: absolute;
+  top: 2.5px;
+  width: 25px;
+  z-index: 1;
+}
+
+.delete-button:focus {
+  outline: none;
+}
+
+.delete-button:active {
+  transform: translateY(1px);
+}
+
+#facebook-login {
+  position: absolute;
+  right: 9px;
+}
+
+#facebook-login #icon {
+  display: inline;
+  position: relative;
+  right: 3px;
+  top: 1px;
+  width: 14px;
+}
+
+#facebook-login .text {
+  display: inline;
+  font-size: 15px;
+}
+
+#facebook-login .text:hover {
+  color: #FFF;
+  cursor: pointer;
+  text-shadow: 0px 0px 2px #FFF;
+}
+
+#app-title {
+  color: #CCC;
+  font-size: 70px;
+  margin: 80px auto 0px auto;
+  text-shadow: 1px 1px #999;
+}
+
+#title-subtext {
+  color: #AAA;
+  display: inline;
+  margin: 10px 0px;
+}
+
+#cocktail-icon {
+  left: 4px;
+  position: relative;
+  top: 1px;
 }
 
 #search-bar {
-  margin-top: 60px;
+  margin: 40px 0px 60px 5px;
 }
 
 #search-input {
-  width: 400px;
+  background: #242424;
+  border: 3px solid #AAA;
+  border-radius: 3px;
+  color: #BBB;
+  font-size: 28px;
   height: 35px;
   margin: auto;
-  background: #333;
-  color: #DDD;
-  border: 3px solid #DDD;
-  border-radius: 3px;
-  font-size: 28px;
   padding-left: 8px;
+  width: 400px;
+}
+
+#search-input:hover {
+  border-color: #FFF;
+  box-shadow: 0px 0px 3px #FFF;
+}
+
+#search-input:focus {
+  outline: none;
 }
 
 #search-button {
-  width: 110px;
   height: 43px;
-  margin-left: 15px;
-  background: #333;
-  color: #DDD;
-  border: 3px solid #DDD;
+  background: #282828;
+  border: 3px solid #AAA;
   border-radius: 3px;
-  font-size: 28px;
+  color: #CCC;
   cursor: pointer;
+  font-size: 28px;
+  margin-left: 15px;
+  width: 110px;
 }
 
 #search-button:hover {
-  color: #FFF;
-  border-color: #FFF;
   background: #323232;
-  text-shadow: 0px 0px 2px #FFF;
+  border-color: #FFF;
   box-shadow: 0px 0px 3px #FFF;
+  color: #FFF;
+  text-shadow: 0px 0px 2px #FFF;
+}
+
+#search-button:focus {
+  outline: none;
+}
+
+#search-button:active {
+  transform: translateY(1px);
 }
 
 #listings {
@@ -75,24 +148,24 @@ body {
 }
 
 .listing {
+  background: #252525;
+  border-radius: 3px;
   box-shadow: 2px 2px 5px #000;
+  height: 160px;
   list-style: none;
   margin: 20px auto;
   width: 770px;
-  height: 160px;
-  background: #353535;
-  border-radius: 3px;
 }
 
 .thumbnail {
-  width: 134px;
-  height: 124px;
   border: 3px solid #DDD;
   border-radius: 4px;
-  margin: 15px 0px 15px 15px;
-  float: left;
   box-shadow: 2px 2px 5px #000;
   cursor: pointer;
+  float: left;
+  height: 124px;
+  margin: 15px 0px 15px 15px;
+  width: 134px;
 }
 
 .thumbnail:hover {
@@ -101,40 +174,62 @@ body {
 }
 
 .info-box {
+  display: inline-block;
   height: 160px;
   width: 500px;
-  display: inline-block;
 }
 
 .info-box .venue-title {
+  font-size: 27px;
   margin: 10px auto;
+  padding-top: 15px;
 }
 
 .info-box .venue-price {
-  margin: 10px auto;
+  margin: 13px auto;
 }
 
-.info-box .venue-rating {
-  margin: 10px auto;
+.info-box .venue-price .text {
+  display: inline;
+  margin: 0;
+}
+
+.info-box .venue-price .dollar-signs {
+  color: rgb(152, 201, 72);
+  display: inline;
+  margin: 0;
+}
+
+.info-box .star-box{
+  margin: auto;
+  position: relative;
+}
+
+.info-box .star-box .star-halfer {
+  position: relative;
 }
 
 .attend-button {
-  width: 84px;
-  height: 34px;
-  margin: 60px 15px 60px 0px;
-  float: right;
-  background: #333;
+  background: #2A2A2A;
   border: 3px solid #DDD;
   border-radius: 3px;
+  box-shadow: 2px 2px 5px #000;
   color: #DDD;
   cursor: pointer;
-  box-shadow: 2px 2px 5px #000;
+  float: right;
+  height: 34px;
+  margin: 60px 15px 60px 0px;
+  width: 84px;
 }
 
 .attend-button:hover {
-  color: #FFF;
+  background: #2D2D2D;
   border-color: #FFF;
-  background: #323232;
-  text-shadow: 0px 0px 2px #FFF;
   box-shadow: 0px 0px 3px #FFF;
+  color: #FFF;
+  text-shadow: 0px 0px 2px #FFF;
+}
+
+.attend-button:active {
+  transform: translateY(1px);
 }

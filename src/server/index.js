@@ -32,7 +32,7 @@ app.use(session({
 passport.use(new FacebookStrategy({
   clientID: process.env.FB_APP_ID,
   clientSecret: process.env.FB_SECRET,
-  callbackURL: `${isProd ? 'https://coordinator-app.herokuapp.com/' : 'http://localhost:8080'}/auth/facebook/callback`,
+  callbackURL: `${isProd ? 'https://coordinator-app.herokuapp.com' : 'http://localhost:8080'}/auth/facebook/callback`,
 }, (accessToken, refreshToken, profile, done) => {
   User.findOne({ profileId: profile.id }, (err, user) => {
     if (err) return done(err);
